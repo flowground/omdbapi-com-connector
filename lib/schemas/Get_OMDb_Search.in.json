@@ -1,0 +1,68 @@
+{
+    "type": "object",
+    "properties": {
+        "t": {
+            "required": false,
+            "type": "string"
+        },
+        "i": {
+            "required": false,
+            "type": "string"
+        },
+        "s": {
+            "required": false,
+            "type": "string"
+        },
+        "y": {
+            "required": false,
+            "type": "integer"
+        },
+        "type": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "movie",
+                "series",
+                "episode"
+            ]
+        },
+        "plot": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "short",
+                "full"
+            ],
+            "default": "short"
+        },
+        "tomatoes": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "r": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "json",
+                "xml"
+            ],
+            "default": "json"
+        },
+        "v": {
+            "required": false,
+            "type": "integer",
+            "default": 1
+        },
+        "page": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+        },
+        "callback": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

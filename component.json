@@ -1,0 +1,52 @@
+{
+    "title": "OMDb",
+    "description": "The Open Movie Database. The OMDb API is a free web service to obtain movie information, all content and images on the site are contributed and maintained by our users.",
+    "docsUrl": "http://www.omdbapi.com/#usage",
+    "url": "https://api.apis.guru/v2/specs/omdbapi.com/1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://www.omdbapi.com/",
+                    "https://www.omdbapi.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Get_OMDb_Search": {
+            "main": "./lib/actions/Get_OMDb_Search.js",
+            "title": "OMDb Search",
+            "description": "Find a movie, series or episode from the OMDb by title, IMDb-id or by free-text search",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Get_OMDb_Search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
